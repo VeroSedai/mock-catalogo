@@ -22,6 +22,9 @@ export default function ProductItem({ product }) {
           </a>
         </Link>
         <p>{product.price}€</p>
+        <button className="primary-button text-white" type="button">
+          Add to cart
+        </button>
       </div>
     </div>
   );
