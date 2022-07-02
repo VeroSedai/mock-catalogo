@@ -2,7 +2,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import React, { useContext, useEffect, useState } from 'react';
 import { Store } from '../utils/Store';
-import { ShoppingCartIcon, UserIcon } from '@heroicons/react/solid';
+import { ShoppingCartIcon, UserIcon } from '@heroicons/react/outline';
+import { Menu } from '@headlessui/react';
 
 export default function Layout({ title, children }) {
   const { state } = useContext(Store);
@@ -29,8 +30,8 @@ export default function Layout({ title, children }) {
             </Link>
             <div className="flex justify-between">
               <Link href="/cart">
-                <a className="right-0">
-                  <ShoppingCartIcon className="h-5 w-5" />
+                <a>
+                  <ShoppingCartIcon className="h-5 w-5 right-0" />
                   {cartItemsCount > 0 && (
                     <span className="ml-1 rounded-full align-top bg-red-600 px-2 py-1 text-xs font-bold text-white">
                       {cartItemsCount}
@@ -40,11 +41,25 @@ export default function Layout({ title, children }) {
               </Link>
             </div>
             <div className="flex justify-between">
-              <Link href="/login">
-                <a className="p-2">
-                  <UserIcon className="h-5 w-5" />
-                </a>
-              </Link>
+              <a className="p-2">
+                <Menu as="div" className="relative inline-block">
+                  <Menu.Button className="text-black">
+                    <UserIcon className="h-5 w-5" />
+                  </Menu.Button>
+                  <Menu.Items className="absolute right-0 w-56 origin-top-right bg-white  shadow-lg ">
+                    <Menu.Item disabled>
+                      <span className="opacity-75 flex p-2 hover:bg-gray-200">
+                        test2
+                      </span>
+                    </Menu.Item>
+                    <Menu.Item disabled>
+                      <span className="opacity-75 flex p-2 hover:bg-gray-200">
+                        test1
+                      </span>
+                    </Menu.Item>
+                  </Menu.Items>
+                </Menu>
+              </a>
             </div>
           </nav>
         </header>
