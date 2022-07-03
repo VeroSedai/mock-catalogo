@@ -14,7 +14,7 @@ export const links = [
       {
         Head: 'Cancelleria',
         sublink: [
-          { name: 'Buste', link: '/' },
+          { name: 'Buste', link: '/buste' },
           { name: 'Biglietti da visita', link: '/product/biglietti-da-visita' },
           { name: 'Carta', link: '/' },
           { name: 'Carta da lettera', link: '/' },

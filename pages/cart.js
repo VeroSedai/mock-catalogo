@@ -1,4 +1,4 @@
-import { XCircleIcon } from '@heroicons/react/solid';
+import { ArrowCircleLeftIcon, XCircleIcon } from '@heroicons/react/solid';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -27,9 +27,14 @@ function CartPage() {
       {cartItems.length === 0 ? (
         <div className="grid md:grid-cols-4 md:gap-5">
           <div className="overflow-x-auto md:col-span-3">
-            Il tuo carrello è vuoto.
+            <h2 className="text-lg">Il tuo carrello è vuoto.</h2>
           </div>
-          <Link href="/">Continua lo Shopping</Link>
+          <Link href="/">
+            <a className="primary-button text-white">
+              Continua lo shopping
+              <ArrowCircleLeftIcon className="h-6 w-6"></ArrowCircleLeftIcon>
+            </a>
+          </Link>
         </div>
       ) : (
         <div className="grid md:grid-cols-4 md:gap-5">
@@ -89,13 +94,13 @@ function CartPage() {
             <ul>
               <li>
                 <div className="pb-3 text-xl">
-                  Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}) :{' '}
+                  Totale ({cartItems.reduce((a, c) => a + c.quantity, 0)}) :{' '}
                   {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}€
                 </div>
               </li>
               <li>
                 <button className="primary-button w-full text-white">
-                  Check Out
+                  Inoltra Ordine
                 </button>
               </li>
             </ul>

@@ -7,9 +7,10 @@ import { Store } from '../utils/Store';
 export default function Home() {
   const { state, dispatch } = useContext(Store);
 
-  const addToCartHandler = (product) => {
+  const addToCartHandler = (product, qta) => {
     const existItem = state.cart.cartItems.find((x) => x.slug === product.slug);
-    const quantity = existItem ? existItem.quantity + 1 : 1;
+    const addQta = qta ? qta : 1;
+    const quantity = existItem ? existItem.quantity + addQta : addQta;
 
     if (product.countInStock < quantity) {
       alert('out of stock');
