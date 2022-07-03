@@ -23,10 +23,13 @@ function CartPage() {
 
   return (
     <Layout title="Shopping Cart">
-      <h1 className="mb-4 text-xl">Shopping Cart</h1>
+      <h1 className="mb-4 text-xl">Carrello</h1>
       {cartItems.length === 0 ? (
-        <div>
-          Cart is empty. <Link href="/">Go Shopping</Link>
+        <div className="grid md:grid-cols-4 md:gap-5">
+          <div className="overflow-x-auto md:col-span-3">
+            Il tuo carrello è vuoto.
+          </div>
+          <Link href="/">Continua lo Shopping</Link>
         </div>
       ) : (
         <div className="grid md:grid-cols-4 md:gap-5">
@@ -41,8 +44,8 @@ function CartPage() {
                 </tr>
               </thead>
               <tbody>
-                {cartItems.map((item) => (
-                  <tr key={item.slug} className="border-b">
+                {cartItems.map((item, i) => (
+                  <tr key={i} className="border-b">
                     <td>
                       <Link href={`/product/${item.slug}`}>
                         <a className="flex items-center">

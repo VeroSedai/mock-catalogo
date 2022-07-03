@@ -1,0 +1,46 @@
+import { MenuIcon } from '@heroicons/react/outline';
+import { XIcon } from '@heroicons/react/solid';
+import Link from 'next/link';
+import React, { useState } from 'react';
+import NavLinks from './NavLinks';
+import SearchBox from './SearchBox';
+const BottomNavBar = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <nav>
+      <div className="flex font-medium p-1 w-full justify-between">
+        <div className="text-3xl md:hidden" onClick={() => setOpen(!open)}>
+          {!open && (
+            <MenuIcon className="h-6 w-6 text-white items-center cursor-pointer md:hidden"></MenuIcon>
+          )}
+        </div>
+        <div className="md:flex hidden font-sans">
+          <NavLinks />
+        </div>
+        <div className="md:block hidden">
+          <SearchBox></SearchBox>
+        </div>
+        {/* Mobile nav */}
+        <div
+          className={`fixed top-0 left-0 h-screen w-screen overflow-y-auto bg-white transform ${
+            open ? '-translate-x-0' : '-translate-x-full'
+          } transition-transform duration-500 ease-in-out filter drop-shadow-md `}
+        >
+          <div className="md:hidden" onClick={() => setOpen(!open)}>
+            {open && (
+              <XIcon className="h-6 w-6 cursor-pointer justify-center items-center"></XIcon>
+            )}
+          </div>
+          <div className="py-5">
+            <SearchBox></SearchBox>
+          </div>
+          <Link href="/" className="py-7 px-3 inline-block">
+            <NavLinks />
+          </Link>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default BottomNavBar;

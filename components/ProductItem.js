@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function ProductItem({ product, addToCartHandler }) {
   return (
     <div className="card">
-      <Link href={`/product/${product.slug}`}>
+      <Link href={`/product/details/${product.slug}`}>
         <a>
           <img
             src={product.image}
@@ -16,7 +16,7 @@ export default function ProductItem({ product, addToCartHandler }) {
       </Link>
 
       <div className="flex flex-col items-center justify-center p-5">
-        <Link href={`/product/${product.slug}`}>
+        <Link href={`/product/details/${product.slug}`}>
           <a>
             <h2 className="text-lg">{product.name}</h2>
           </a>
@@ -27,7 +27,7 @@ export default function ProductItem({ product, addToCartHandler }) {
           type="button"
           onClick={() => addToCartHandler(product)}
         >
-          Add to cart
+          Aggiungi al carrello
         </button>
       </div>
     </div>
