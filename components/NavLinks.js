@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { links } from './Mylinks';
+import { links } from './link';
 import { Menu } from '@headlessui/react';
 
 const NavLinks = (props) => {
