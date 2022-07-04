@@ -27,7 +27,7 @@ export default function Layout({ title, children }) {
           </nav>
         </header>
         <main className="container m-auto mt-4 px-4">{children}</main>
-        <footer className="flex h-10 justify-center items-center shadow-inner bg-slate-800">
+        <footer className="flex mt-2 h-10 justify-center items-center shadow-inner bg-slate-800">
           <p className="text-white">Copyright © 2022 e-step</p>
         </footer>
       </div>
