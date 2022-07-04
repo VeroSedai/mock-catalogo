@@ -30,7 +30,7 @@ function CartPage() {
             <h2 className="text-lg">Il tuo carrello è vuoto.</h2>
           </div>
           <Link href="/">
-            <a className="primary-button text-white">
+            <a className="primary-button w-full text-white">
               Continua lo shopping
               <ArrowCircleLeftIcon className="h-6 w-6"></ArrowCircleLeftIcon>
             </a>
@@ -45,7 +45,7 @@ function CartPage() {
                   <th className="px-5 text-left">Articolo</th>
                   <th className="p-5 text-right">Quantità</th>
                   <th className="p-5 text-right">Prezzo</th>
-                  <th className="p-5"></th>
+                  <th className="p-5">Cancella</th>
                 </tr>
               </thead>
               <tbody>

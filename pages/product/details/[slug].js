@@ -5,6 +5,7 @@ import data from '../../../utils/data';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Store } from '../../../utils/Store';
+import { ArrowCircleLeftIcon } from '@heroicons/react/solid';
 
 export default function ProductDetails() {
   const router = useRouter();
@@ -32,7 +33,9 @@ export default function ProductDetails() {
   return (
     <Layout title={product.name}>
       <div className="py-2">
-        <Link href="/">Torna ai prodotti</Link>
+        <Link href="/">
+          <ArrowCircleLeftIcon className="bg-slate-900 text-white h-8 w-6"></ArrowCircleLeftIcon>
+        </Link>
       </div>
       <div className="grid md:grid-cols-4 md:gap-3">
         <div className="md:col-span-2">
@@ -47,10 +50,25 @@ export default function ProductDetails() {
         <div>
           <ul>
             <li>
-              <h1 className="text-lg">{product.name}</h1>
+              <h1 className="text-lg font-semibold tracking-tight text-gray-900">
+                {product.name}
+              </h1>
             </li>
-            <li>Categoria: {product.category}</li>
-            <li>Descrizione: {product.description}</li>
+            <li className="text-base font-semibold tracking-tight text-gray-900">
+              Codice Prodotto: {product.code}
+            </li>
+            <li className=" text-xs font-semibold py-0.5 rounded">
+              Descrizione: {product.description}
+            </li>
+            <li className=" text-xs font-semibold py-0.5 rounded">
+              Quantità: {product.quantity}
+            </li>
+            <li className=" text-xs font-semibold py-0.5 rounded text-gray-500">
+              {product.note && (
+                <div className=" text-xs py-0.5">Note Specifiche:</div>
+              )}
+              {product.note}
+            </li>
           </ul>
         </div>
         <div>
