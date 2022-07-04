@@ -3,7 +3,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Store } from '../utils/Store';
 import { ShoppingCartIcon, UserIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
-import { Menu } from '@headlessui/react';
 
 export default function UpperNavBar() {
   const { state } = useContext(Store);
@@ -21,7 +20,7 @@ export default function UpperNavBar() {
             src="/images/agos.jpg"
             alt="agos"
             className="rounded-shadow"
-            width={60}
+            width={70}
             height={50}
           ></Image>
         </a>
@@ -41,23 +40,7 @@ export default function UpperNavBar() {
             </Link>
           </li>
           <li>
-            <Menu as="div" className="relative inline-block">
-              <Menu.Button className="text-black">
-                <UserIcon className="h-6 w-6" />
-              </Menu.Button>
-              <Menu.Items className="absolute z-40 right-0 w-56 origin-top-right bg-white  shadow-lg ">
-                <Menu.Item disabled>
-                  <span className="opacity-75 flex p-2 hover:bg-gray-200">
-                    test2
-                  </span>
-                </Menu.Item>
-                <Menu.Item disabled>
-                  <span className="opacity-75 flex p-2 hover:bg-gray-200">
-                    test1
-                  </span>
-                </Menu.Item>
-              </Menu.Items>
-            </Menu>
+            <UserIcon className="h-6 w-6" />
           </li>
         </ul>
       </div>

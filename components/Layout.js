@@ -13,8 +13,8 @@ export default function Layout({ title, children }) {
       </Head>
 
       <div className="flex min-h-screen flex-col justify-between">
-        <div className="flex h-10 shadow-inner bg-slate-800">
-          <p className="text-white">e-step</p>
+        <div className="flex h-10 justify-end items-center pr-1 bg-slate-800">
+          <p className="text-white ">e-step</p>
         </div>
         <header>
           <nav className="flex flex-col px-4">
