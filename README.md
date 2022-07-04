@@ -3,10 +3,9 @@
 
 This is a sample application that demonstrates an E-commerce website using the React stack. The application loads products and displays them. Users can select to display products in a single category. Users can click on any product to get more information. Users can select items and add them to their shopping cart.
 
-```bash
-$ Source Code: https://github.com/VeroSedai/mock-catalogo.git
-$ Demo Site: mock-catalogo-verosedai.vercel.app
-```
+- Source Code    :  https://github.com/VeroSedai/mock-catalogo.git
+- Demo Website :  https://mock-catalogo-verosedai.vercel.app
+
 
 ## Run Locally
 
@@ -43,6 +42,8 @@ Start the server
 React
 Next.js 
 TailwindCSS
+@headlessui/react,
+@heroicons/react
 
 ```
 
