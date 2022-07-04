@@ -42,10 +42,10 @@ function CartPage() {
             <table className="min-w-full">
               <thead className="border-b">
                 <tr>
-                  <th className="px-5 text-left">Item</th>
-                  <th className="p-5 text-right">Quantity</th>
-                  <th className="p-5 text-right">Price</th>
-                  <th className="p-5">Action</th>
+                  <th className="px-5 text-left">Articolo</th>
+                  <th className="p-5 text-right">Quantità</th>
+                  <th className="p-5 text-right">Prezzo</th>
+                  <th className="p-5"></th>
                 </tr>
               </thead>
               <tbody>
@@ -67,6 +67,7 @@ function CartPage() {
                     </td>
                     <td className="p-5 text-right">
                       <select
+                        className="flex-shrink-0 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center text-gray-500 bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100"
                         value={item.quantity}
                         onChange={(e) =>
                           updateCartHandler(item, e.target.value)
@@ -82,7 +83,7 @@ function CartPage() {
                     <td className="p-5 text-right">{item.price}€</td>
                     <td className="p-5 text-center">
                       <button onClick={() => removeItemHandler(item)}>
-                        <XCircleIcon className="h-5 w-5"></XCircleIcon>
+                        <XCircleIcon className="h-6 w-6"></XCircleIcon>
                       </button>
                     </td>
                   </tr>
